@@ -26,8 +26,10 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		//MovimentByPosition();
+		//Clamping the axis
 		float x = Mathf.Clamp(gameObject.transform.position.x, _xMin, _xMax);
 		float y = Mathf.Clamp(gameObject.transform.position.y, _yMin, _yMax);
+		
 		//Vector3 positionLimits
 		gameObject.transform.position = new Vector3(x, y, 0);
 		//gameObject.transform.position = positionLimits ;	
