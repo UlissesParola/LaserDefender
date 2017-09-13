@@ -12,7 +12,7 @@ public class EnemyFormation : MonoBehaviour
 
 	private float _xMax;
 	private float _xMin;
-	private bool movingRight = true;
+	private bool _movingRight = true;
 
 	
 	// Use this for initialization
@@ -43,8 +43,8 @@ public class EnemyFormation : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log(movingRight);
-		if (movingRight)
+		Debug.Log(_movingRight);
+		if (_movingRight)
 		{
 			transform.position += Vector3.right * Speed * Time.deltaTime;
 		}
@@ -53,12 +53,18 @@ public class EnemyFormation : MonoBehaviour
 			transform.position += Vector3.left * Speed * Time.deltaTime;
 		}
 		
+		
 		float widthPadding = GizmoWidth * 0.5f;
 
-		                     
-		if ((transform.position.x + widthPadding) > _xMax || (transform.position.x - widthPadding) < _xMin )
+
+		if ((transform.position.x + widthPadding) > _xMax)
 		{
-			movingRight = !movingRight;
+			_movingRight = false;
+		}
+		else if((transform.position.x - widthPadding) < _xMin )
+		{
+			_movingRight = true;
+
 		}
 		
 	}
