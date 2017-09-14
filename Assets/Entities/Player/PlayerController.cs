@@ -7,6 +7,9 @@ public class PlayerController : MonoBehaviour
 {
 	public float ShipPadding = 0.5f;
 	public float Speed = 150f;
+	public GameObject Laser;
+	public float LaserSpeed = 10f;
+	public float LaserFireRating = 0.2f;
 
 	private Rigidbody2D _playerRigidbody2D;
 	private float _xMin;
@@ -26,13 +29,24 @@ public class PlayerController : MonoBehaviour
 	void Update ()
 	{
 		//MovimentByPosition();
+		
 		//Clamping the axis
 		float x = Mathf.Clamp(gameObject.transform.position.x, _xMin, _xMax);
 		float y = Mathf.Clamp(gameObject.transform.position.y, _yMin, _yMax);
 		
 		//Vector3 positionLimits
 		gameObject.transform.position = new Vector3(x, y, 0);
-		//gameObject.transform.position = positionLimits ;	
+
+		//Laser fire behavior
+		if (Input.GetButtonDown("Fire"))
+		{
+			InvokeRepeating("Fire", 0.0001f, LaserFireRating);
+		}
+		if (Input.GetButtonUp("Fire"))
+		{
+			CancelInvoke("Fire");
+		}
+		
 	}
 
 	void FixedUpdate()
@@ -47,7 +61,6 @@ public class PlayerController : MonoBehaviour
 		
 		if (_playerRigidbody2D.velocity.x > -15f && _playerRigidbody2D.velocity.x < 15f)
 		{
-			Debug.Log(_playerRigidbody2D.velocity.x);
 			_playerRigidbody2D.AddForce(new Vector3(Speed * directionX, 0f, 0f));
 		}
 		
@@ -59,7 +72,7 @@ public class PlayerController : MonoBehaviour
 		
 	}
 	
-	private void MovimentByPosition()
+	/*private void MovimentByPosition()
 	{
 		if (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.A))
 		{
@@ -70,15 +83,14 @@ public class PlayerController : MonoBehaviour
 		{
 			transform.position += Vector3.right * Speed * Time.deltaTime;
 		}
-	}
+	}*/
 	
-	private void MovimentByVelocity()
+	/*private void MovimentByVelocity()
 	{
 		float directionX = Input.GetAxis("Horizontal");
 		float directionY = Input.GetAxis("Vertical");
 		_playerRigidbody2D.velocity = new Vector3(Speed * directionX, Speed * directionY, 0f);
-
-	}
+	}*/
 	
 	private void GetScreenLimits()
 	{
@@ -94,4 +106,10 @@ public class PlayerController : MonoBehaviour
 		_yMax = topMost.y - ShipPadding;
 	}
 
+	private void Fire()
+	{
+		GameObject projectile = Instantiate(Laser, transform.position, Quaternion.identity);
+		projectile.GetComponent<Rigidbody2D>().velocity = new Vector3(0, LaserSpeed, 0);
+		//Destroy(projectile, 1f); using the collider alternative for destroy the lasers
+	}
 }

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b0bb4265-ad41-45e7-9aee-220485bed635" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.Laser Defender/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.Laser Defender/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Entities/Enemy/Enemy.prefab" afterPath="$PROJECT_DIR$/Assets/Entities/Enemy/Enemy.prefab" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs" afterPath="$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" afterPath="$PROJECT_DIR$/Assets/_Scenes/Game.unity" />
-    </list>
+    <list default="true" id="b0bb4265-ad41-45e7-9aee-220485bed635" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +15,8 @@
       <file leaf-file-name="PlayerController.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Assets/Entities/Player/PlayerController.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-675">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="77" />
               <folding>
                 <marker date="1505226050291" expanded="true" signature="6:118" ph="..." />
                 <marker date="1505226050291" expanded="true" signature="165:2659" ph="{...}" />
@@ -42,21 +37,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EnemySpawner.cs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs">
+      <file leaf-file-name="EnemyFormation.cs" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemyFormation.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+            <state relative-caret-position="427">
+              <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
               <folding>
-                <marker date="1505261968256" expanded="false" signature="6:78" ph="..." />
-                <marker date="1505261968256" expanded="true" signature="121:1635" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="381:893" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="511:698" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="704:889" ph="/* foreach (Transform child in this.transform) ... */" />
-                <marker date="1505261968256" expanded="true" signature="923:1010" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="1063:1289" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="1145:1186" ph="{...}" />
-                <marker date="1505261968256" expanded="true" signature="1322:1633" ph="{...}" />
+                <marker date="1505267086493" expanded="false" signature="6:78" ph="..." />
+                <marker date="1505267086493" expanded="true" signature="123:1793" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="383:841" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="459:646" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="652:837" ph="/* foreach (Transform child in this.transform) ... */" />
+                <marker date="1505267086493" expanded="true" signature="871:958" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1011:1446" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1061:1134" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1141:1213" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1316:1349" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1407:1440" ph="{...}" />
+                <marker date="1505267086493" expanded="true" signature="1479:1791" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -68,7 +66,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemyFormation.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Entities/Player/PlayerController.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -80,6 +78,7 @@
         <option value="$PROJECT_DIR$/Assets/Entities/Enemy/EnemyPosition.cs" />
         <option value="$PROJECT_DIR$/Assets/Entities/Player/PlayerController.cs" />
         <option value="$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs" />
+        <option value="$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemyFormation.cs" />
       </list>
     </option>
   </component>
@@ -90,9 +89,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="914" />
-    <option name="width" value="935" />
-    <option name="height" value="1003" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1858" />
+    <option name="height" value="1012" />
   </component>
   <component name="ProjectView">
     <navigator currentView="SolutionExplorer" proportions="" version="1">
@@ -232,12 +232,12 @@
       <workItem from="1505179586778" duration="1886000" />
       <workItem from="1505221872212" duration="297000" />
       <workItem from="1505222183168" duration="4444000" />
-      <workItem from="1505260032228" duration="1935000" />
+      <workItem from="1505260032228" duration="6601000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16283000" />
+    <option name="totallyTimeSpent" value="20949000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -249,8 +249,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="914" y="0" width="935" height="1003" extended-state="0" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1858" height="1012" extended-state="6" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Errors In Solution" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -260,7 +259,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2687704" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13409337" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -308,20 +307,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemyFormation.cs">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
           <caret line="16" column="53" lean-forward="false" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
           <folding>
-            <marker date="1505261968256" expanded="false" signature="6:78" ph="..." />
-            <marker date="1505261968256" expanded="true" signature="121:1635" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="381:893" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="511:698" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="704:889" ph="/* foreach (Transform child in this.transform) ... */" />
-            <marker date="1505261968256" expanded="true" signature="923:1010" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1063:1289" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1145:1186" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1322:1633" ph="{...}" />
+            <marker date="1505267086493" expanded="false" signature="6:78" ph="..." />
+            <marker date="1505267086493" expanded="true" signature="123:1793" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="383:841" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="459:646" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="652:837" ph="/* foreach (Transform child in this.transform) ... */" />
+            <marker date="1505267086493" expanded="true" signature="871:958" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1011:1446" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1061:1134" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1141:1213" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1316:1349" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1407:1440" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1479:1791" ph="{...}" />
           </folding>
         </state>
       </provider>
@@ -338,8 +340,8 @@
     <entry file="file://$PROJECT_DIR$/Assets/Entities/Enemy/EnemyPosition.cs" />
     <entry file="file://$PROJECT_DIR$/Assets/Entities/Player/PlayerController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-675">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="29" selection-end-column="77" />
           <folding>
             <marker date="1505226050291" expanded="true" signature="6:118" ph="..." />
             <marker date="1505226050291" expanded="true" signature="165:2659" ph="{...}" />
@@ -359,20 +361,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemySpawner.cs">
+    <entry file="file://$PROJECT_DIR$/Assets/Entities/EnemyFormation/EnemyFormation.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="37" column="5" lean-forward="true" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+        <state relative-caret-position="427">
+          <caret line="54" column="8" lean-forward="false" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="8" />
           <folding>
-            <marker date="1505261968256" expanded="false" signature="6:78" ph="..." />
-            <marker date="1505261968256" expanded="true" signature="121:1635" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="381:893" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="511:698" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="704:889" ph="/* foreach (Transform child in this.transform) ... */" />
-            <marker date="1505261968256" expanded="true" signature="923:1010" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1063:1289" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1145:1186" ph="{...}" />
-            <marker date="1505261968256" expanded="true" signature="1322:1633" ph="{...}" />
+            <marker date="1505267086493" expanded="false" signature="6:78" ph="..." />
+            <marker date="1505267086493" expanded="true" signature="123:1793" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="383:841" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="459:646" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="652:837" ph="/* foreach (Transform child in this.transform) ... */" />
+            <marker date="1505267086493" expanded="true" signature="871:958" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1011:1446" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1061:1134" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1141:1213" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1316:1349" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1407:1440" ph="{...}" />
+            <marker date="1505267086493" expanded="true" signature="1479:1791" ph="{...}" />
           </folding>
         </state>
       </provider>

@@ -43,7 +43,6 @@ public class EnemyFormation : MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		Debug.Log(_movingRight);
 		if (_movingRight)
 		{
 			transform.position += Vector3.right * Speed * Time.deltaTime;
