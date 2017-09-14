@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
 	public GameObject Laser;
 	public float LaserSpeed = 10f;
 	public float LaserFireRating = 0.2f;
+	public float PlayerHitpont = 50f;
 
 	private Rigidbody2D _playerRigidbody2D;
 	private float _xMin;
@@ -53,6 +54,20 @@ public class PlayerController : MonoBehaviour
 	{
 		MovimentByForce();
 		//MovimentByVelocity();
+	}
+
+	private void OnTriggerEnter2D(Collider2D other)
+	{
+		EnemyLaser laser = other.GetComponent<EnemyLaser>();
+		if (laser)
+		{
+			PlayerHitpont -= laser.Hit();
+			if (PlayerHitpont <= 0)
+			{
+				Destroy(gameObject);
+			}
+		}
+		
 	}
 
 	private void MovimentByForce()
