@@ -9,6 +9,7 @@ public class EnemyFormation : MonoBehaviour
 	public float GizmoWidth = 6.74f;
 	public float GizmoHeight = 4.42f;
 	public float Speed = 5f;
+	public float SpawDelay = 0.5f;
 
 	private float _xMax;
 	private float _xMin;
@@ -20,7 +21,7 @@ public class EnemyFormation : MonoBehaviour
 	{
 		GetScreenLimits();
 
-		SpawEnemies();
+		SpawUntilFull();
 
 		/*foreach (Transform child in this.transform)
 		{
@@ -63,7 +64,7 @@ public class EnemyFormation : MonoBehaviour
 
 		if (AllEnemiesAreDead())
 		{
-			SpawEnemies();
+			SpawUntilFull();
 		}
 		
 	}
@@ -91,6 +92,19 @@ public class EnemyFormation : MonoBehaviour
 		return true;
 	}
 	
+	private Transform NextEmptyPosition()
+	{
+		foreach (Transform position in transform)
+		{
+			if (position.childCount == 0)
+			{
+				return position;
+			}
+		}
+
+		return null;
+	}
+	
 	private void SpawEnemies()
 	{
 		for (int i = 0; i < transform.childCount; i++)
@@ -99,5 +113,17 @@ public class EnemyFormation : MonoBehaviour
 			GameObject enemy = Instantiate(EnemyPrefab, child.position, Quaternion.identity);
 			enemy.transform.parent = child.transform;
 		}
+	}
+
+	private void SpawUntilFull()
+	{
+		Transform freePosition = NextEmptyPosition();
+		if (freePosition)
+		{
+			GameObject enemy = Instantiate(EnemyPrefab, freePosition.position, Quaternion.identity);
+			enemy.transform.parent = freePosition.transform;
+			Invoke("SpawUntilFull", SpawDelay);
+		}
+		
 	}
 }
