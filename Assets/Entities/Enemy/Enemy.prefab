@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Hitpoints: 30
   Laser: {fileID: 1428673414031844, guid: e0684d32dffdd4540b71d6159201d7ef, type: 2}
-  Speed: 4
+  Speed: 6
 --- !u!212 &212102805861047980
 SpriteRenderer:
   m_ObjectHideFlags: 1

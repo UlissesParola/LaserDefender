@@ -19,21 +19,16 @@ public class EnemyFormation : MonoBehaviour
 	void Start ()
 	{
 		GetScreenLimits();
-		
-		for (int i = 0; i < transform.childCount; i++)
-		{
-			Transform child = this.transform.GetChild(i);
-			GameObject enemy = Instantiate(EnemyPrefab, child.position, Quaternion.identity);
-			enemy.transform.parent = child.transform;
-		}
-		
+
+		SpawEnemies();
+
 		/*foreach (Transform child in this.transform)
 		{
 			GameObject enemy = Instantiate(EnemyPrefab, child.position, Quaternion.identity);
 			enemy.transform.parent = child.transform;
 		}*/
-
 	}
+
 
 	private void OnDrawGizmos()
 	{
@@ -65,6 +60,11 @@ public class EnemyFormation : MonoBehaviour
 			_movingRight = true;
 
 		}
+
+		if (AllEnemiesAreDead())
+		{
+			SpawEnemies();
+		}
 		
 	}
 
@@ -76,5 +76,28 @@ public class EnemyFormation : MonoBehaviour
 
 		_xMin = leftMost.x;
 		_xMax = rightMost.x;
+	}
+
+	private bool AllEnemiesAreDead()
+	{
+		foreach (Transform position in transform)
+		{
+			if (position.childCount > 0)
+			{
+				return false;
+			}
+		}
+
+		return true;
+	}
+	
+	private void SpawEnemies()
+	{
+		for (int i = 0; i < transform.childCount; i++)
+		{
+			Transform child = this.transform.GetChild(i);
+			GameObject enemy = Instantiate(EnemyPrefab, child.position, Quaternion.identity);
+			enemy.transform.parent = child.transform;
+		}
 	}
 }
