@@ -64,7 +64,8 @@ public class EnemyFormation : MonoBehaviour
 
 		if (AllEnemiesAreDead())
 		{
-			SpawUntilFull();
+			GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().InstantiateEnemies();
+			Destroy(gameObject);
 		}
 		
 	}
@@ -105,15 +106,6 @@ public class EnemyFormation : MonoBehaviour
 		return null;
 	}
 	
-	private void SpawEnemies()
-	{
-		for (int i = 0; i < transform.childCount; i++)
-		{
-			Transform child = this.transform.GetChild(i);
-			GameObject enemy = Instantiate(EnemyPrefab, child.position, Quaternion.identity);
-			enemy.transform.parent = child.transform;
-		}
-	}
 
 	private void SpawUntilFull()
 	{
