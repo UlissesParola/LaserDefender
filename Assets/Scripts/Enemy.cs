@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -8,11 +9,11 @@ public class Enemy : MonoBehaviour
 	public GameObject Torpedo;
 	public float Speed = 4f;
 	public AudioClip Explosion;
-
-	private float _wait;
-
+	private Score _score;
+	
 	void Start()
 	{
+		_score = GameObject.Find("Score").GetComponent<Score>();
 		InvokeRepeating("Fire", Random.Range(0.1f, 2f), Random.Range(1f, 4f));
 	}
 
@@ -26,6 +27,7 @@ public class Enemy : MonoBehaviour
 			if (Hitpoints <=0 )
 			{
 				AudioSource.PlayClipAtPoint(Explosion, Camera.main.transform.position, 1.5f);
+				_score.ScorePoints(100);
 				Destroy(gameObject);
 			}
 		}

@@ -69,6 +69,10 @@ public class PlayerController : MonoBehaviour
 			_shieldAnimator.Play("Shield");
 			GetComponentInChildren<Shield>().PlaySound();
 			PlayerHitpoint -= laser.Hit();
+			/*if (PlayerHitpoint == 10)
+			{
+				GetComponent<Animator>().Play("RedAlert");
+			*/
 			if (PlayerHitpoint <= 0)
 			{
 				Destroy(gameObject);
