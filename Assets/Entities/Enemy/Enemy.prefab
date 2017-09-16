@@ -23,7 +23,8 @@ GameObject:
   - component: {fileID: 212102805861047980}
   - component: {fileID: 114706397291180380}
   - component: {fileID: 61842052885551914}
-  m_Layer: 0
+  - component: {fileID: 95653094200749684}
+  m_Layer: 9
   m_Name: Enemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -88,6 +89,23 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.93, y: 0.84}
   m_EdgeRadius: 0
+--- !u!95 &95653094200749684
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1683621282349684}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d27828326125bb843bb1d3aa7b2f490f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114706397291180380
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -100,8 +118,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Hitpoints: 30
-  Laser: {fileID: 1428673414031844, guid: e0684d32dffdd4540b71d6159201d7ef, type: 2}
+  Torpedo: {fileID: 0}
   Speed: 6
+  Explosion: {fileID: 8300000, guid: 71627ddfbd8f1cb4598bfbce115a38e7, type: 3}
 --- !u!212 &212102805861047980
 SpriteRenderer:
   m_ObjectHideFlags: 1

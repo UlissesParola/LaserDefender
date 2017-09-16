@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions.Comparers;
+using UnityEngine.Experimental.Director;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,9 +10,11 @@ public class PlayerController : MonoBehaviour
 	public float Speed = 150f;
 	public GameObject Laser;
 	public float LaserSpeed = 10f;
-	public float LaserFireRating = 0.2f;
-	public float PlayerHitpont = 50f;
-
+	public float LaserFireRating = 0.5f;
+	public float PlayerHitpoint = 50f;
+	
+	
+	private Animator _shieldAnimator;
 	private Rigidbody2D _playerRigidbody2D;
 	private float _xMin;
 	private float _xMax;
@@ -23,6 +26,7 @@ public class PlayerController : MonoBehaviour
 	{
 		GetScreenLimits();
 
+		_shieldAnimator = GetComponentInChildren<Animator>();
 		_playerRigidbody2D = gameObject.GetComponent<Rigidbody2D>();
 	}
 
@@ -61,13 +65,15 @@ public class PlayerController : MonoBehaviour
 		EnemyLaser laser = other.GetComponent<EnemyLaser>();
 		if (laser)
 		{
-			PlayerHitpont -= laser.Hit();
-			if (PlayerHitpont <= 0)
+			_shieldAnimator.Play("Idle");
+			_shieldAnimator.Play("Shield");
+			GetComponentInChildren<Shield>().PlaySound();
+			PlayerHitpoint -= laser.Hit();
+			if (PlayerHitpoint <= 0)
 			{
 				Destroy(gameObject);
 			}
-		}
-		
+		}	
 	}
 
 	private void MovimentByForce()
@@ -79,11 +85,11 @@ public class PlayerController : MonoBehaviour
 			_playerRigidbody2D.AddForce(new Vector3(Speed * directionX, 0f, 0f));
 		}
 		
-		float directionY = Input.GetAxis("Vertical");
+		/*float directionY = Input.GetAxis("Vertical");
 		if (_playerRigidbody2D.velocity.y > -15f && _playerRigidbody2D.velocity.y < 15f)
 		{
 			_playerRigidbody2D.AddForce(new Vector3(0f, Speed * directionY, 0f));
-		}
+		}*/
 		
 	}
 	
@@ -125,6 +131,7 @@ public class PlayerController : MonoBehaviour
 	{
 		GameObject projectile = Instantiate(Laser, transform.position, Quaternion.identity);
 		projectile.GetComponent<Rigidbody2D>().velocity = new Vector3(0, LaserSpeed, 0);
+		projectile.GetComponent<AudioSource>().Play();
 		//Destroy(projectile, 1f); using the collider alternative for destroy the lasers
 	}
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 	public float Hitpoints = 30;
-	public GameObject Laser;
+	public GameObject Torpedo;
 	public float Speed = 4f;
+	public AudioClip Explosion;
 
 	private float _wait;
 
@@ -17,13 +18,14 @@ public class Enemy : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
-		Laser missile = other.gameObject.GetComponent<Laser>(); // Actually getting the script component, not the class itself
-		if (missile)
+		Laser torpedo = other.gameObject.GetComponent<Laser>(); // Actually getting the script component, not the class itself
+		if (torpedo)
 		{
-			Hitpoints -= missile.Hit();
+			Hitpoints -= torpedo.Hit();
 
 			if (Hitpoints <=0 )
 			{
+				AudioSource.PlayClipAtPoint(Explosion, Camera.main.transform.position, 1.5f);
 				Destroy(gameObject);
 			}
 		}
@@ -32,7 +34,8 @@ public class Enemy : MonoBehaviour
 	
 	private void Fire()
 	{
-		GameObject laser = Instantiate(Laser, transform.position, Quaternion.identity);
-		laser.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -Speed);
+		GameObject torpedo = Instantiate(Torpedo, transform.position, Quaternion.identity);
+		torpedo.GetComponent<Rigidbody2D>().velocity = new Vector2(0f, -Speed);
+		torpedo.GetComponent<AudioSource>().Play();
 	}
 }
