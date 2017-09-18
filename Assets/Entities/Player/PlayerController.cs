@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
 	public float LaserSpeed = 10f;
 	public float LaserFireRating = 0.5f;
 	public float PlayerHitpoint = 50f;
+	public LevelManager LevelManager;
 	
 	
 	private Animator _shieldAnimator;
@@ -75,6 +76,7 @@ public class PlayerController : MonoBehaviour
 			*/
 			if (PlayerHitpoint <= 0)
 			{
+				LevelManager.LoadNextLevel();
 				Destroy(gameObject);
 			}
 		}	

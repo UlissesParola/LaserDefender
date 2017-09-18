@@ -65,6 +65,7 @@ public class EnemyFormation : MonoBehaviour
 		if (AllEnemiesAreDead())
 		{
 			GameObject.Find("EnemySpawner").GetComponent<EnemySpawner>().InstantiateEnemies();
+			GameObject.Find("Score").GetComponent<Score>().ScorePoints(500);
 			Destroy(gameObject);
 		}
 		

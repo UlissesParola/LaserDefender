@@ -1,30 +1,32 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.VR.WSA.WebCam;
 
 public class MusicPlayer : MonoBehaviour {
-	public static MusicPlayer instance;
 
-	void Awake(){
-		if (instance != null) 
+	private MusicPlayer _instance;
+	private AudioSource _audioSource;
+
+	void Awake()
+	{
+		if (_instance != null && _instance == this)
 		{
-			Destroy (gameObject);
-		} 
-		else 
-		{
-			instance = this;	
+			Destroy(gameObject);
+		}
+		else
+		{	
+			_instance = this;
+			_audioSource = GetComponent<AudioSource>();
 			DontDestroyOnLoad(gameObject);
 		}
-	}
-
-	// Use this for initialization
-	void Start () {
-
 
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+
+	public void PlayClip(AudioClip clip)
+	{
+		_audioSource.clip = clip;
+		_audioSource.Play();
 	}
 }
